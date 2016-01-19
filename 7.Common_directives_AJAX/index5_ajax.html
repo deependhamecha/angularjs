@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp">
+    <head>
+    <script src="angular.min.js"></script>
+    
+    <script src="app.js"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <link rel="stylesheet" href="..//css/bootstrap.min.css">
+<!--
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
+            
+    </head>
+    <body>
+        <div class="container">
+            <div ng-controller = "mainController">
+                <br/>
+<!--               JavaScript Eventlistener example -->
+                <label>JavaScript event example : </label>
+                <input type="text" id="jsevent" />
+                <hr/>
+                <label>Enter Username : </label>
+                <input type="text" ng-model="handle" />
+                
+<!--                ng-if value should always to boolean [if removes the element from the DOM] -->
+<!--
+                <div class="alert alert-danger" ng-if="handle.length !== characters">
+                    Must be 5 characters!
+                </div>  
+-->
+                     
+<!--        it does same as above hides the element by adding a 'class' of angularjs named 'ng-hide' -->
+<!--
+                <div class="alert alert-danger" ng-show="handle.length !== characters">
+                    Must be 5 characters!
+                </div>
+-->
+<!--                it hides the element if true by adding 'ng-hide' to 'class'-->
+               
+                <div class="alert alert-danger" ng-hide="handle.length !== characters">
+                    Must be 5 characters!
+                </div>  
+                    
+                <hr/>
+                <h1>www.facebook.com/{{ lowercasehandle() }}</h1>
+                
+                <h3>Rules</h3>
+                <ul>
+<!--                    rule is 'for(String s : string)' where s==rule && string==rules -->
+<!--                    check the console..it will different list for every object-->
+<!--                    ng-repeat is for looping through array -->
+                    <li ng-repeat="rule in rules">
+                        {{ rule.rulename }}
+                    </li>
+                </ul>
+                
+                <input type="text" ng-model="newRule" />
+                <a class="btn btn-default" ng-click="addRule()">Add Rule</a>
+            </div>
+        </div>        
+    </body>
+</html>
