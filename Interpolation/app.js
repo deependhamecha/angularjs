@@ -44,6 +44,7 @@ myApp.directive("searchResult",function(){
         // remember : if replace : false then restrict:'C' wont work, as it accepts as a simple comment
         
         scope: { // @ = text = ONE WAY BINDING
+			// Poking a hole from html page to directive page via app.js
 //            personName : "@",
 //            personQualification : "@"
             
