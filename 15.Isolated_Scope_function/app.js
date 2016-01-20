@@ -39,7 +39,7 @@ myApp.directive("searchResult",function(){
         // Now, this html string can be pretty ugly at times so save it to another file & give path
         templateUrl : 'directives/search-result.html', //u can name directives folder as u want, nothing personal
         
-        replace: false,  // this will fully replace check console 12 & do it false & check
+        replace: true,  // this will fully replace check console 12 & do it false & check
         
         // remember : if replace : false then restrict:'C' wont work, as it accepts as a simple comment
         
@@ -48,7 +48,8 @@ myApp.directive("searchResult",function(){
 //            personName : "@",
 //            personQualification : "@"
             
-            personObject : "=" // = TWO WAY BINDING for Object
+            personObject : "=",
+			formattedNameFunction : "&" // for calling function
             
             // function
 //            formattedNameFunction : "&"
