@@ -48,10 +48,10 @@ myApp.directive("searchResult",function(){
 //            personName : "@",
 //            personQualification : "@"
             
-            personObject : "=", // = TWO WAY BINDING for Object
+            personObject : "=" // = TWO WAY BINDING for Object
             
             // function
-            formattedNameFunction : "&"
+//            formattedNameFunction : "&"
         }
     }
 });
