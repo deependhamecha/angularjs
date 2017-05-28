@@ -1,6 +1,6 @@
 var myApp = angular.module("myApp",[]);
 
-myApp.controller("mainController",['$scope','$timeout',function(s,t){
+myApp.controller("mainController",['$scope','$timeout',function(s,t) {
 	//We use array because of Minimizers so that it wont convert Strings.
     
     s.name = "Deepen";

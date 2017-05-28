@@ -17,7 +17,7 @@ myApp.config(function($routeProvider){
 //    })
 });
 // Our service
-myApp.service('nameService',function(){
+myApp.service('nameService',function() {
     var self = this;
     this.name = 'Deepen';
     this.namelength = function(){
@@ -25,7 +25,7 @@ myApp.service('nameService',function(){
     };
 });
 
-myApp.controller('homeController',function($scope,$log,nameService){
+myApp.controller('homeController',function($scope,$log,nameService) {
     
 //   $scope.name = 'Home';
 //    $log.log(nameService.name);

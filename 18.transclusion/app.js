@@ -59,23 +59,7 @@ myApp.directive("searchResult",function(){
             // function
 //            formattedNameFunction : "&"
         },
-        compile: function(elem, attrs) {
-            console.log('Compiling...');
-            console.log(elem.html());
-
-            return {
-
-                pre: function(scope, elements, attrs) {
-                    console.log('Pre Linking...');  
-                    console.log(elements);
-
-                },
-
-                post: function(scope, elements, attrs) {
-                    console.log('Post Linking...');   
-                    console.log(elements);
-                }
-            }
-        }
+        // Allow text written inside <search-result> and paste it in `ng-transclude` attr or tag. Both works
+        transclude: true
     }
 });

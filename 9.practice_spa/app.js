@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp',['ngRoute']);
 
-myApp.config(function($routeProvider){
-    
+myApp.config(function($routeProvider) {
+
     $routeProvider
     .when('/',{
         templateUrl : 'home.html',
@@ -18,16 +18,17 @@ myApp.config(function($routeProvider){
 });
 
 myApp.controller('homeController',function($scope){
-    
+
     $scope.name = 'Home';
 });
 
 myApp.controller('firstController',function($scope){
-    
+
     $scope.name = 'First';
 });
 
 myApp.controller('secondController',function($scope){
-    
+
+    // console.log('coming');
     $scope.name = 'Second';
 });

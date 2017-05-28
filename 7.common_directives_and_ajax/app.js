@@ -1,5 +1,5 @@
 var myApp  = angular.module("myApp",[]);
-myApp.controller("mainController",function($scope,$filter,$http,$timeout){
+myApp.controller("mainController",function($scope,$filter,$http,$timeout) {
     
     $scope.handle="";
     $scope.lowercasehandle = function(){
@@ -28,8 +28,8 @@ myApp.controller("mainController",function($scope,$filter,$http,$timeout){
     
     // ajax GET request using $http
     
-    $http.get('json1.json')
-        .success(function(result){
+    $scope.dude = $http.get('json1.json')
+         .success(function(result){
         
         $scope.rules = result;
     })
@@ -41,16 +41,28 @@ myApp.controller("mainController",function($scope,$filter,$http,$timeout){
     // ajax POST request using $http
     
     $scope.newRule='';
-    $scope.addRule = function(){
+    $scope.addRule = function() {
         
         $http.post('json1.json',{ newRule : $scope.newRule })
-            .success(function(result){
+            .success(function(result) {
                 $scope.rules = result;
                 $scope.newRule = '';
         })
-            .error(function(data,status){
+            .error(function(data,status) {
                 console.log(data);
         });
     };
+
+
+//--------------------------------------------
+        $scope.fooditem = $http.get('http://localhost:8000/api/fooditem')
+            .success(function(result) {
         
+        $scope.fooddata = result;
+    })
+            .error(function(data,status) {
+        
+            console.log(data+' '+status);
+    });
+//--------------------------------------------
 });
