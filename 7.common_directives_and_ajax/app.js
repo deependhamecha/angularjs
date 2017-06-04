@@ -29,11 +29,11 @@ myApp.controller("mainController",function($scope,$filter,$http,$timeout) {
     // ajax GET request using $http
     
     $scope.dude = $http.get('json1.json')
-         .success(function(result){
+         .success(function(result) {
         
         $scope.rules = result;
     })
-        .error(function(data,status){
+        .error(function(data,status) {
         
             console.log(data+' '+status);
     });
