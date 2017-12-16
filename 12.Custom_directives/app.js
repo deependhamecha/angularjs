@@ -22,7 +22,7 @@ myApp.controller('secondController',function($scope){
     
 });
 
-myApp.directive("searchResult",function(){
+myApp.directive("searchResult",function() {
     
     
     return { 
