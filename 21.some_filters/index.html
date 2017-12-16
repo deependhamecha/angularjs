@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="../js/angular.min.js"></script>
+    <script src="app.js"></script>
+    <!-- <script src="components/name/nameController.js"></script> -->
+
+
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+<!--
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
+<!-- 
+            ORDERING AND FILTERING IN SEARCH
+ -->
+</head>
+<body ng-app="myApp">
+    <div class="container">
+
+        <div ng-controller="myController">
+            <h4>Type for filtering names</h4>
+            <input type="text" ng-model="searchName" class="form-control" style="margin: 10px 0px;" />
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="person in persons | filter:searchName | orderBy:'profession'">{{ person.name }}</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

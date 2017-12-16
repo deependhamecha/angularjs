@@ -19,10 +19,9 @@ myApp.controller('mainController',function($scope){
     },
 	{   
         name : 'Dilisha Dhamecha',
-        qualification : 'Chip & Dale Student'
+        qualification : 'Junior KG'
     },
 	{
-        
         name : 'Ravi Dhamecha',
         qualification : 'Fashion Designer'
     }];
@@ -41,7 +40,7 @@ myApp.controller('secondController',function($scope){
 myApp.directive("searchResult",function(){
     
     
-    return { 
+    return {
         restrict : 'AEMC', // A=attribute, E= Element, C=Class, M=Comment
         //actual directive ...THIS WILL INSERT INTO <search-result> directive
 //        template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Deepen Dhamecha</h4><p class="list-group-item-text">IT Engineer</p></a>',
@@ -59,6 +58,24 @@ myApp.directive("searchResult",function(){
             
             // function
 //            formattedNameFunction : "&"
+        },
+        compile: function(elem, attrs) {
+            console.log('Compiling...');
+            console.log(elem.html());
+
+            return {
+
+                pre: function(scope, elements, attrs) {
+                    console.log('Pre Linking...');  
+                    console.log(elements);
+
+                },
+
+                post: function(scope, elements, attrs) {
+                    console.log('Post Linking...');   
+                    console.log(elements);
+                }
+            }
         }
     }
 });

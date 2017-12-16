@@ -13,11 +13,11 @@ myApp.config(function($routeProvider){
     })
 });
 
-myApp.controller('mainController',function($scope){
+myApp.controller('mainController',function($scope) {
 
 });
 
-myApp.controller('secondController',function($scope){
+myApp.controller('secondController',function($scope) {
     
     
 });

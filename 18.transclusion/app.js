@@ -12,11 +12,19 @@ myApp.config(function($routeProvider){
 
 myApp.controller('mainController',function($scope){
     
-    $scope.person = {
-        
+    $scope.people = [
+	{    
         name : 'Deepen Dhamecha',
         qualification : 'IT Engineer'
-    };
+    },
+	{   
+        name : 'Dilisha Dhamecha',
+        qualification : 'Junior KG'
+    },
+	{
+        name : 'Ravi Dhamecha',
+        qualification : 'Fashion Designer'
+    }];
     
     $scope.formattedName = function(person){     // function
       
@@ -29,29 +37,29 @@ myApp.controller('secondController',function($scope){
     
 });
 
-myApp.directive("searchResult",function() {
+myApp.directive("searchResult",function(){
     
     
-    return { 
+    return {
         restrict : 'AEMC', // A=attribute, E= Element, C=Class, M=Comment
         //actual directive ...THIS WILL INSERT INTO <search-result> directive
 //        template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Deepen Dhamecha</h4><p class="list-group-item-text">IT Engineer</p></a>',
         // Now, this html string can be pretty ugly at times so save it to another file & give path
         templateUrl : 'directives/search-result.html', //u can name directives folder as u want, nothing personal
         
-        replace: false,  // this will fully replace check console 12 & do it false & check
+        replace: true,  // this will fully replace check console 12 & do it false & check
         
         // remember : if replace : false then restrict:'C' wont work, as it accepts as a simple comment
         
-        scope: { // @ = text = ONE WAY BINDING
-			// Poking a hole from html page to directive page via app.js
-//            personName : "@",
-//            personQualification : "@"
-            
-            personObject : "=" // = TWO WAY BINDING for Object
+        scope: {
+
+            personObject : "=",
+			formattedNameFunction : "&" // for calling function
             
             // function
 //            formattedNameFunction : "&"
-        }
+        },
+        // Allow text written inside <search-result> and paste it in `ng-transclude` attr or tag. Both works
+        transclude: true
     }
 });

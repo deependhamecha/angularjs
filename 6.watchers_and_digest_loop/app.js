@@ -14,8 +14,8 @@ myApp.controller("mainController",function($scope,$filter,$timeout) {
 
     // watchlist & digest loop tracks the variables & you can manually do it using below code
     // it also checks with HTML DOM
+    $scope.$watch('handle',function(oldValue, newValue) {
 
-    $scope.$watch('handle',function(oldValue, newValue){
         console.info('Changed!');
         console.log(oldValue);
         console.log(newValue);
@@ -23,16 +23,16 @@ myApp.controller("mainController",function($scope,$filter,$timeout) {
 
 
 
-//     this did not update bcoz its javascript (Outside of AngularJS context) &
-// thats it wasnt executed or tracked by angularjs digest loop && dont do it
+
+//     this did not update bcoz its javascript (Outside of AngularJS context) & thats it wasnt executed or tracked by angularjs digest loop && dont do it
     setTimeout(function() {
 		$scope.handle = 'Deepen Dhamecha';
         console.log($scope.handle);
     },3000);
 
-    // So whenever u r using Angularjs inside javascript & u want digest loop to keep track of it then put it in $apply()
 
-    setTimeout(function(){
+    // So whenever u r using Javascript inside Angularjs & u want to do digest loop to keep track of it then put it in $apply()
+    setTimeout(function() {
         $scope.$apply(function(){
             $scope.handle = "Hello World";
             console.log($scope.handle);
@@ -40,9 +40,9 @@ myApp.controller("mainController",function($scope,$filter,$timeout) {
     },5000);
 
     // or u can do it directly by using $timeout service of angularjs
-
-    $timeout(function(){
+    $timeout(function() {
         $scope.handle = 'inside scope';
         console.log($scope.handle);
-    },10000);
+    }, 10000);
+
 });

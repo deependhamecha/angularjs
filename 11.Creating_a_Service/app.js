@@ -25,7 +25,7 @@ myApp.service('nameService',function() {
     };
 });
 
-myApp.controller('homeController', function($scope,$log,nameService){
+myApp.controller('homeController',function($scope,$log,nameService) {
 
 //   $scope.name = 'Home';
 //    $log.log(nameService.name);

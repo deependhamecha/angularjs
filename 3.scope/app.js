@@ -20,7 +20,6 @@
         
         var name = "deepen";
         $scope.name1 = "dhamecha";
-        
 		
         name = $filter('uppercase')(name);
         $scope.name1 = $filter('uppercase')($scope.name1);
