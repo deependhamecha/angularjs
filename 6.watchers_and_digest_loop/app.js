@@ -31,7 +31,7 @@ myApp.controller("mainController",function($scope,$filter,$timeout) {
     },3000);
 
 
-    // So whenever u r using Javascript inside Angularjs & u want to do digest loop to keep track of it then put it in $apply()
+    // So whenever u r using Javascript context inside Angularjs then u want to put it in digest loop to keep track of it by putting it in $apply()
     setTimeout(function() {
         $scope.$apply(function(){
             $scope.handle = "Hello World";

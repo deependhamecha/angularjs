@@ -14,9 +14,9 @@
         $log.warn("Warning information");
         
 		var searchPeople = function(firstname,lastname){ return "Ohky Mate!" };
-		console.log("::"+searchPeople.toString());
+		// console.log("::"+searchPeople.toString());
 		// Dependency Injection inside Angular
-		console.log(angular.injector().annotate(searchPeople)); // This method takes your parameters and converts it into an array and passes on to other functions when needed as dependency injection.
+		console.log(">>>", angular.injector().annotate(searchPeople)); // This method takes your parameters and converts it into an array and passes on to other functions when needed as dependency injection.
         
         var name = "deepen";
         $scope.name1 = "dhamecha";

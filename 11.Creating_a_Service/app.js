@@ -16,6 +16,7 @@ myApp.config(function($routeProvider){
 //        controller : 'secondController'
 //    })
 });
+
 // Our service
 myApp.service('nameService',function() {
     var self = this;
@@ -53,6 +54,9 @@ myApp.controller('firstController',function($scope,$log,nameService){
 
     $scope.name = nameService.name;
 
+    /**
+     * Update the name from $scope of this Controller with service variable.
+     */
     $scope.$watch('name',function(oldValue,newValue){
         nameService.name = $scope.name;
         console.log(oldValue+' '+newValue);
